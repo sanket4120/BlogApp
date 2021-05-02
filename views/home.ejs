@@ -1,0 +1,23 @@
+<%-include('./partials/header')%> <%-include('./partials/navbar')%>
+
+<section id="blogs" class="container my-3">
+  <div class="row">
+    <% for(blog of blogs) {%>
+    <div class="col-sm-6 col-md-4">
+      <div class="card my-2">
+        <img src="<%=blog.image%>" class="card-img-top" alt="Blog Image" />
+        <div class="card-body">
+          <h5 class="card-title"><%=blog.title%></h5>
+          <p class="card-text"><%=blog.body.substring(0,120)+'...'%></p>
+          <p>Author: <%=blog.author%></p>
+          <a href="/blog/<%=blog.id%>" class="btn btn-outline-primary"
+            >Read More</a
+          >
+        </div>
+      </div>
+    </div>
+    <%}%>
+  </div>
+</section>
+
+<%-include('./partials/footer')%>

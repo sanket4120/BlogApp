@@ -1,0 +1,45 @@
+<%-include('./partials/header')%> <%-include('./partials/navbar')%>
+
+<form
+  method="post"
+  action="/"
+  class="container my-5 needs-validation"
+  novalidate
+>
+  <input
+    type="text"
+    name="title"
+    class="form-control"
+    placeholder="Blog Title"
+    required
+  />
+  <br />
+  <input
+    type="text"
+    name="image"
+    class="form-control"
+    placeholder="Image url"
+    required
+  />
+  <br />
+  <input
+    type="text"
+    name="author"
+    class="form-control"
+    placeholder="Author Name"
+    required
+  />
+  <br />
+  <textarea
+    class="form-control"
+    rows="10"
+    cols="30"
+    placeholder="Blog Text"
+    name="body"
+    required
+  ></textarea>
+  <br />
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+
+<%-include('./partials/footer')%>

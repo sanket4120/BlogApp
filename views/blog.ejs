@@ -1,0 +1,50 @@
+<%-include('./partials/header')%> <%-include('./partials/navbar')%>
+
+<div class="container" style="max-width: 45rem">
+  <div class="card mx-auto my-3">
+    <img src="<%=blog.image%>" class="card-img-top" alt="Blog Image" />
+    <div class="card-body">
+      <h5 class="card-title"><%=blog.title%></h5>
+      <p class="card-text"><%=blog.body%></p>
+      <p>Author: <%=blog.author%></p>
+      <a href="/update/<%=blog.id%>" class="btn btn-outline-primary">Edit</a>
+      <form
+        method="post"
+        action="/<%=blog.id%>?_method=DELETE"
+        style="display: inline-block"
+      >
+        <button type="submit" class="btn btn-outline-danger">Delete</button>
+      </form>
+    </div>
+  </div>
+
+  <h2>Responses (<%=blog.comments.length%>)</h2>
+  <form
+    method="post"
+    action="/blog/<%=blog.id%>/comment"
+    class="container my-3 needs-validation"
+    novalidate
+  >
+    <textarea
+      class="form-control"
+      rows="3"
+      cols="30"
+      placeholder="What are your thoughts?"
+      name="comment"
+      required
+    ></textarea>
+    <br />
+    <button type="submit" class="btn btn-outline-primary">Submit</button>
+  </form>
+
+  <%for(comment of blog.comments){%>
+  <div class="card my-2">
+    <div class="card-header">User</div>
+    <div class="card-body">
+      <p class="card-text"><%=comment.comment%></p>
+    </div>
+  </div>
+  <%}%>
+</div>
+
+<%-include('./partials/footer')%>
