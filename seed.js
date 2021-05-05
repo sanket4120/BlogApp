@@ -2,7 +2,7 @@ const Blog = require('./model/blog');
 
 const blogs = [
   {
-    title: 'Wild Life',
+    title: 'This is dummy blog heading',
     image:
       'https://cdn.pixabay.com/photo/2021/04/22/17/46/bug-6199670__340.jpg',
     body:
@@ -10,7 +10,7 @@ const blogs = [
     author: 'Sanket Jadhav',
   },
   {
-    title: 'Into the ocean 🌊🌊',
+    title: 'This is dummy blog heading',
     image:
       'https://cdn.pixabay.com/photo/2020/04/18/16/42/rocky-coast-5059912__340.jpg',
     body:
@@ -18,7 +18,7 @@ const blogs = [
     author: 'Pitam Kumar',
   },
   {
-    title: 'The Lighthouse',
+    title: 'This is dummy blog heading',
     image:
       'https://cdn.pixabay.com/photo/2021/04/25/16/43/lighthouse-6207038__340.jpg',
     body:
@@ -26,7 +26,7 @@ const blogs = [
     author: 'Keshav',
   },
   {
-    title: 'Architecture',
+    title: 'This is dummy blog heading',
     image:
       'https://cdn.pixabay.com/photo/2020/04/04/16/07/building-5002861__340.jpg',
     body:
@@ -34,7 +34,7 @@ const blogs = [
     author: 'John Doe',
   },
   {
-    title: 'Demo Post',
+    title: 'This is dummy blog heading',
     image:
       'https://cdn.pixabay.com/photo/2021/04/24/04/12/flaccid-anemone-6203188__340.jpg',
     body:
@@ -42,7 +42,7 @@ const blogs = [
     author: 'Ram',
   },
   {
-    title: 'Demo Post',
+    title: 'This is dummy blog heading',
     image:
       'https://cdn.pixabay.com/photo/2020/04/22/08/06/dolomites-5076492__340.jpg',
     body:
@@ -51,9 +51,9 @@ const blogs = [
   },
 ];
 
-async function feed() {
+async function seed() {
   await Blog.insertMany(blogs);
-  console.log('DB feeded');
+  console.log('DB seeded');
 }
 
-module.exports = feed;
+module.exports = seed;
